@@ -14,6 +14,13 @@
 Route::get('/', function () {
     return view('blog.index');
 });
+Route::get('/about', function () {
+    return view('blog.about');
+});
+Route::get('/news', function () {
+    return view('blog.news');
+});
+
 
 
 

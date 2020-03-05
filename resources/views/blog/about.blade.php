@@ -1,3 +1,3 @@
 @extends('blog.layout')
 
-@section('title','Home')
+@section('title','About')
