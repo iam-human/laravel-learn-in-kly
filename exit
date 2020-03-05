@@ -1,0 +1,47 @@
+[33mcommit a9edd6d7f3958a290460db60f6f1b36547b14970[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/resource-view[m[33m, [m[1;31morigin/feature/resource-view[m[33m)[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 16:16:51 2020 +0700
+
+    Change routes and news blade
+
+[33mcommit 4d5e1cc021f2a142368b2ded71d53087f97bec0f[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 15:49:31 2020 +0700
+
+    Add news.blade.php
+
+[33mcommit 55f48596cdcca953dc8b0f5db5ee32e5ec3a5368[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 15:45:07 2020 +0700
+
+    Add nav.blade.php
+
+[33mcommit 0e6c3d1baa6235fd951dac9cda145278919e2591[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 15:32:10 2020 +0700
+
+    Add file layout.blade.php
+
+[33mcommit 6ef574488b571ad7016ebeb615cf2f14a2526acf[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 15:28:00 2020 +0700
+
+    Menambahkan File About
+
+[33mcommit e578cf08a89b8262850374d98da4f484409bb81d[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 15:24:39 2020 +0700
+
+    Edit Route
+
+[33mcommit 06f518cef7a57b6fd3b8a08e4997d4f4b585f1d5[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 14:53:28 2020 +0700
+
+    Navbar Awal
+
+[33mcommit 548645d9714afd2d5476f759969ce26b4242e2fd[m[33m ([m[1;31morigin/develop[m[33m, [m[1;32mdevelop[m[33m)[m
+Author: Ilham Mahendra <ilham.mahendra@kly.id>
+Date:   Tue Mar 3 11:44:33 2020 +0700
+
+    Commit Awal
