@@ -1,20 +1,40 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar probootstrap-megamenu navbar-default probootstrap-navbar">
     <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-            <li class="nav-item active">
-            <a class="nav-link" href="{{url('/')}}">Home <span class="sr-only">(current)</span></a>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            {{-- <a class="navbar-brand" href="{{url('/')}}" title="uiCookies:Inspire">Inspire</a> --}}
+            <h1>Title</h1>
+        </div>
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{url('/')}}">Home</a></li>
+                <li><a href="{{url('news')}}">News</a></li>
+            {{-- <li class="dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
+            <ul class="dropdown-menu">
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li class="dropdown-submenu dropdown">
+            <a href="#" data-toggle="dropdown" class="dropdown-toggle"><span>Sub Menu</span></a>
+            <ul class="dropdown-menu">
+            <li><a href="#">Second Level Menu</a></li>
+            <li><a href="#">Second Level Menu</a></li>
+            <li><a href="#">Second Level Menu</a></li>
+            <li><a href="#">Second Level Menu</a></li>
+            </ul>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('/news')}}">News</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{url('/about')}}">About</a>
-            </li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="pricing.html">Pricing</a></li> --}}
+            {{-- </ul>
+            </li> --}}
+            <li><a href="{{url('about')}}">About</a></li>
+            <li class="probootstra-cta-button"><a href="#" class="btn" data-toggle="modal" data-target="#loginModal">Log in</a></li>
+            <li class="probootstra-cta-button last"><a href="#" class="btn btn-ghost" data-toggle="modal" data-target="#signupModal">Sign up</a></li>
             </ul>
         </div>
     </div>
