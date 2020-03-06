@@ -6,12 +6,14 @@
                 <div class="probootstrap-modal-flex">
                     <div class="probootstrap-modal-figure" style="background-image: url(img/modal_bg.jpg);"></div>
                         <div class="probootstrap-modal-content">
-                            <form action="#" class="probootstrap-form">
+                            <form action="{{url('/')}}" class="probootstrap-form" method="post">
+                                @csrf
+                                @method('POST')
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" class="form-control" placeholder="Email" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
                                 </div>
                                 <div class="form-group clearfix mb40">
                                     <label for="remember" class="probootstrap-remember"><input type="checkbox" id="remember"> Remember Me</label>
@@ -30,7 +32,7 @@
                                 <div class="form-group">
                                     <div class="row">
                                         <div class="col-md-12">
-                                            <button class="btn btn-primary btn-ghost btn-block btn-connect-facebook"><span>connect with</span> Facebook</button>
+                                            <a href="{{ url('auth/facebook') }}" target="_blank" class="btn btn-primary btn-ghost btn-block btn-connect-facebook"><span>connect with</span> Facebook</a>
                                             <button class="btn btn-primary btn-ghost btn-block btn-connect-google"><span>connect with</span> Google</button>
                                             <button class="btn btn-primary btn-ghost btn-block btn-connect-twitter"><span>connect with</span> Twitter</button>
                                         </div>
