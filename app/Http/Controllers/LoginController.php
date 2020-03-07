@@ -1,13 +1,10 @@
 <?php
-namespace App\Http\Controllers\Auth;
-use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use Socialite;
-use Auth;
-use Exception;
-use App\User;
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
 use App\Admin;
-use App\UserCustom;
+use App\User;
+use Auth;
 
 
 
@@ -33,7 +30,7 @@ class LoginController extends Controller
      */
 
 
-    public function postLogin(){
+    public function postLogin(Request $request){
         $this->validate($request, [
             'email' => 'required|email',
             'password' => 'required|min:6'
