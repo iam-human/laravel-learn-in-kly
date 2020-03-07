@@ -21,18 +21,12 @@ Route::get('/news', function () {
     return view('blog.news');
 });
 
-// hanya untuk tamu yg belum auth
-Route::get('/login', 'LoginController@getLogin')->middleware('guest');
-Route::post('/', 'LoginController@postLogin');
-Route::get('/logout', 'LoginController@logout');;
-
-Route::get('/admin', function() {
-    return view('blog.news');
-})->middleware('auth:admin');
-
-Route::get('/user', function() {
-    return view('blog.index');
-})->middleware('auth:usercustom');
+// auth route
+// Route::get('/login', 'LoginController@getLogin');
+Route::post('/login', 'LoginController@postLogin')->name('login');
+// Route::get('/register', 'LoginController@getLogin');
+Route::post('/register', 'LoginController@postRegister')->name('register');
+// Route::get('/logout', 'LoginController@logout');
 
 
 
