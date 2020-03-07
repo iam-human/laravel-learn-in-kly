@@ -1001,6 +1001,12 @@ only screen and (min-resolution:2dppx) {
     border-color: #7ed321
 }
 
+.probootstrap-form .is-invalid {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-color: #ad4a4a
+}
+
 .probootstrap-form textarea.form-control {
     height: inherit;
     resize: vertical

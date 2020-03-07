@@ -1,8 +1,8 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Admin;
 use App\User;
 use Auth;
 
@@ -31,71 +31,41 @@ class LoginController extends Controller
 
 
     public function postLogin(Request $request){
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6'
+        if(!Auth::attempt(['email' => $request->email, 'password' => $request->password])) { 
+            return redirect('about');
+        }
+
+        return redirect('news');
+    }
+
+    public function postRegister(Request $request){
+        $this->Validate($request, [
+            'name' => 'required|min:3',
+            'email' => 'required|unique:users|email',
+            'password' => 'required|min:6|confirmed'
         ]);
 
-        ///bcrypt pas
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            // if successful, then redirect to their intended location
-            return redirect()->intended('/');
-        } elseif (Auth::guard('usercustom')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/news');
-        }
-        if (Auth::guard('admin')->check()) {
-        Auth::guard('admin')->logout();
-        } elseif (Auth::guard('usercustom')->check()) {
-        Auth::guard('usercustom')->logout();
-        }
-    
-        return redirect('/');
+        User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+            'provider' => 'null',
+            'provider_id' => 'null'
+        ]);
+
+        return redirect()->back();
     }
 
 
 
 
 
-
-
-
-
-
-
-    // protected $redirectTo = '/home';
     
     /**
      * Create a new controller instance.
      *
      * @return void
      */
-    // public function __construct()
-    // {
-    //     $this->middleware('guest')->except('logout');
-    // }
-    // public function __construct() {
-    //     $this->middleware('guest')->except('logout');
-    // }
-    // public function redirectToFacebook() {
-    //     return Socialite::driver('facebook')->redirect();
-    // }
-    // public function handleFacebookCallback() {
-    //     try {
-    //         $user = Socialite::driver('facebook')->user();
-    //         $finduser = User::where('facebook_id', $user->id)->first();
-    //         if ($finduser) {
-    //             Auth::login($finduser);
-    //             return redirect('/');
-    //         } else {
-    //             $newUser = User::create(['name' => $user->name, 'email' => $user->email, 'facebook_id' => $user->id]);
-    //             Auth::login($newUser);
-    //             return redirect()->back();
-    //         }
-    //     }
-    //     catch(Exception $e) {
-    //         return redirect('auth/facebook');
-    //     }
-    // }
 
 
 }
