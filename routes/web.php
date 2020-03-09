@@ -19,20 +19,14 @@ Route::get('/about', function () {
 });
 Route::get('/news', function () {
     return view('blog.news');
-});
+})->middleware('auth')->name('news');
 
 // auth route
-// Route::get('/login', 'LoginController@getLogin');
+Route::get('/login', 'LoginController@getLogin');
 Route::post('/login', 'LoginController@postLogin')->name('login');
-// Route::get('/register', 'LoginController@getLogin');
+Route::get('/register', 'LoginController@getRegister');
 Route::post('/register', 'LoginController@postRegister')->name('register');
-// Route::get('/logout', 'LoginController@logout');
-
-
-
-// Auth::routes();
-
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout', 'LoginController@logout')->name('logout');
 
 
 Route::get('auth/facebook', 'Auth\LoginController@redirectToFacebook');

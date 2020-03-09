@@ -3,7 +3,7 @@
 @section('title','Home')
 
 @section('body')
-    
+
 <section class="probootstrap-hero">
     <div class="container">
     <div class="row">
@@ -312,5 +312,6 @@
     </div>
     </div>
     </div>
+
 </section>
 @endsection

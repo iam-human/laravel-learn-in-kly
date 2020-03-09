@@ -33,8 +33,19 @@
             {{-- </ul>
             </li> --}}
             <li><a href="{{url('about')}}">About</a></li>
-            <li class="probootstra-cta-button"><a href="#" class="btn" data-toggle="modal" data-target="#loginModal">Log in</a></li>
-            <li class="probootstra-cta-button last"><a href="#" class="btn btn-ghost" data-toggle="modal" data-target="#signupModal">Sign up</a></li>
+
+            @if (Auth::user())
+            <li class="dropdown">
+                <a href="#" data-toggle="dropdown" style="color: green;" class="dropdown-toggle">{{ Auth::user()->name }}</a>
+                <ul class="dropdown-menu">
+                <li><a href="{{route('logout')}}">Logout</a></li>
+                </ul>
+            </li>
+            @else
+                <li class="probootstra-cta-button"><a href="{{url('/login')}}" class="btn" >Log in</a></li>
+                <li class="probootstra-cta-button last"><a href="{{url('/register')}}" class="btn btn-ghost">Sign up</a></li>
+            @endif
+            
             </ul>
         </div>
     </div>

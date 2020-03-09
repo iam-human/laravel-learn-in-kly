@@ -24,9 +24,33 @@
 
 @include('blog.modal')
 
+
+<script src="https://code.jquery.com/jquery-3.2.1.js"></script>
 <script src="{{ asset('/js/scripts.min.js') }}" type="text/javascript"></script>
 <script src="{{ asset('/js/custom.min.js') }}" type="text/javascript"></script>
-<script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="5e54c302f4a990a9aaebcdcb-|49" defer=""></script></body>
+{{-- <script src="https://ajax.cloudflare.com/cdn-cgi/scripts/7089c43e/cloudflare-static/rocket-loader.min.js" data-cf-settings="5e54c302f4a990a9aaebcdcb-|49" defer=""></script> --}}
+
+
+@if (Route::current()->uri() == "login")
+<script>
+    $('#loginModal').modal('show');
+</script>
+@endif
+@if (Route::current()->uri() == "register")
+<script>
+    $('#signupModal').modal('show');
+</script>
+@endif
+
+{{-- @if (count($errors) > 0)
+<script>
+    $( document ).ready(function() {
+        $('#signupModal').modal('show');
+    });
+</script>
+@endif --}}
+
+</body>
 
 <!-- Mirrored from uicookies.com/demo/theme/inspire/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 04 Mar 2020 03:42:14 GMT -->
 </html>
