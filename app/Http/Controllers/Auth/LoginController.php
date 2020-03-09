@@ -33,27 +33,27 @@ class LoginController extends Controller
      */
 
 
-    public function postLogin(){
-        $this->validate($request, [
-            'email' => 'required|email',
-            'password' => 'required|min:6'
-        ]);
+    // public function postLogin(){
+    //     $this->validate($request, [
+    //         'email' => 'required|email',
+    //         'password' => 'required|min:6'
+    //     ]);
 
-        ///bcrypt pas
-        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            // if successful, then redirect to their intended location
-            return redirect()->intended('/');
-        } elseif (Auth::guard('usercustom')->attempt(['email' => $request->email, 'password' => $request->password])) {
-            return redirect()->intended('/news');
-        }
-        if (Auth::guard('admin')->check()) {
-        Auth::guard('admin')->logout();
-        } elseif (Auth::guard('usercustom')->check()) {
-        Auth::guard('usercustom')->logout();
-        }
+    //     ///bcrypt pas
+    //     if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
+    //         // if successful, then redirect to their intended location
+    //         return redirect()->intended('/');
+    //     } elseif (Auth::guard('usercustom')->attempt(['email' => $request->email, 'password' => $request->password])) {
+    //         return redirect()->intended('/news');
+    //     }
+    //     if (Auth::guard('admin')->check()) {
+    //     Auth::guard('admin')->logout();
+    //     } elseif (Auth::guard('usercustom')->check()) {
+    //     Auth::guard('usercustom')->logout();
+    //     }
     
-        return redirect('/');
-    }
+    //     return redirect('/');
+    // }
 
 
 

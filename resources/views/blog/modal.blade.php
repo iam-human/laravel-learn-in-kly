@@ -6,7 +6,7 @@
                 <div class="probootstrap-modal-flex">
                     <div class="probootstrap-modal-figure" style="background-image: url(img/modal_bg.jpg);"></div>
                         <div class="probootstrap-modal-content">
-                            <form action="{{url('/')}}" class="probootstrap-form" method="post">
+                            <form action="{{route('login')}}" class="probootstrap-form" method="post">
                                 @csrf
                                 @method('POST')
                                 <div class="form-group">
@@ -47,6 +47,7 @@
     </div>
     
     {{-- SIGN UP  --}}
+
     
     <div class="modal fadeInUp probootstrap-animated" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
     <div class="vertical-alignment-helper">
@@ -56,15 +57,35 @@
                 <div class="probootstrap-modal-flex">
                     <div class="probootstrap-modal-figure" style="background-image: url(img/modal_bg.jpg);"></div>
                         <div class="probootstrap-modal-content">
-                            <form action="#" class="probootstrap-form">
+                            <form action="{{route('register')}}" method="post" class="probootstrap-form">
+                                @csrf
+                                @method('POST')
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" placeholder="Full Name" name="name" value="{{ old('name') }}" required autofocus>
+                                    @if ($errors->has('name'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('name')}}
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Password">
+                                    <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : ''}}" placeholder="Email" name="email" value="{{ old('email') }}" required autofocus>
+                                    @if ($errors->has('email'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('email')}}
+                                        </div>
+                                    @endif
                                 </div>
                                 <div class="form-group">
-                                    <input type="password" class="form-control" placeholder="Re-type Password">
+                                    <input type="password" class="form-control {{ $errors->has('password') ? 'is-invalid' : ''}}" placeholder="Password" name="password">
+                                    @if ($errors->has('password'))
+                                        <div class="invalid-feedback">
+                                            {{ $errors->first('password')}}
+                                        </div>
+                                    @endif
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" class="form-control {{ $errors->has('password_confirmation') ? 'is-invalid' : ''}}" placeholder="Re-type Password" name="password_confirmation">
                                 </div>
                                 <div class="form-group clearfix mb40">
                                     <label for="remember" class="probootstrap-remember"><input type="checkbox" id="remember"> Remember Me</label>
@@ -95,4 +116,12 @@
                 </div>
             </div>
         </div>
+
+
+    @if ($errors->has('email'))
+        <script>
+            $('#signupModal').modal('show');
+        </script>
+    @endif
+
     </div>
