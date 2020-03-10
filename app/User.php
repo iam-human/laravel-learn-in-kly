@@ -21,12 +21,12 @@ class User extends Authenticatable
     ];
 
     // for relation db
-    public function phone(){
-        return $this->hasOne('App\Phone');
-    }
 
     public function smartphone(){
         return $this->hasMany('App\Smartphone');
+    }
+    public function phone(){
+        return $this->hasOne('App\Phone');
     }
 
     /**

@@ -8,7 +8,8 @@
 </head>
 <body>
     @foreach ($users as $u)
-        <p>{{ $u->email." Nomernya = ".$u->phone->phone }}</p>
+
+        <p>{{ $u->email." Nomernya = ".$u->phone->phone ." Merk Hp : ". $u->smartphone }}</p>
     @endforeach
 </body>
 </html>
