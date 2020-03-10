@@ -38,6 +38,7 @@
             <li class="dropdown">
                 <a href="#" data-toggle="dropdown" style="color: green;" class="dropdown-toggle">{{ Auth::user()->name }}</a>
                 <ul class="dropdown-menu">
+                <li><a href="{{url('users')}}">Data User</a></li>
                 <li><a href="{{route('logout')}}">Logout</a></li>
                 </ul>
             </li>

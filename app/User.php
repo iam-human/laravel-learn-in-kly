@@ -20,6 +20,15 @@ class User extends Authenticatable
         'name', 'email', 'password', 'provider', 'provider_id'
     ];
 
+    // for relation db
+    public function phone(){
+        return $this->hasOne('App\Phone');
+    }
+
+    public function smartphone(){
+        return $this->hasMany('App\Smartphone');
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -37,4 +46,5 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
 }

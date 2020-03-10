@@ -21,6 +21,8 @@ Route::get('/news', function () {
     return view('blog.news');
 })->middleware('auth')->name('news');
 
+Route::get('users', 'UserController@index');
+
 // auth route
 Route::get('/login', 'LoginController@getLogin');
 Route::post('/login', 'LoginController@postLogin')->name('login');
