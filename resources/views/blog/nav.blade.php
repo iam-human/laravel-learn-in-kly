@@ -14,6 +14,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="{{url('/')}}">Home</a></li>
                 <li><a href="{{url('news')}}">News</a></li>
+                <li><a href="{{url('products')}}">Product</a></li>
             {{-- <li class="dropdown">
             <a href="#" data-toggle="dropdown" class="dropdown-toggle">Pages</a>
             <ul class="dropdown-menu">

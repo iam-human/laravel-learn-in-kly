@@ -11,16 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('blog.index');
-});
-Route::get('/about', function () {
-    return view('blog.about');
-});
-Route::get('/news', function () {
-    return view('blog.news');
-})->middleware('auth')->name('news');
+Route::get('/', 'HomeController@index');
+Route::get('products', 'ProductController@index');
+Route::get('about', 'HomeController@about');
 
+Route::get('news', 'NewsController@index')->middleware('auth')->name('news');
 Route::get('users', 'UserController@index');
 
 // auth route

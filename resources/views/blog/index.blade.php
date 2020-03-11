@@ -67,7 +67,7 @@
     </div>
     </div>
     </div>
-    </section>
+</section>
     <section class="probootstrap-section probootstrap-bg-white probootstrap-zindex-above-showcase">
     <div class="container">
     <div class="row">
