@@ -26,3 +26,6 @@ class NewsletterController extends Controller
         return redirect('/')->with('failure', 'Sorry, This Email already for Subcribe');
     }
 }
+
+
+
