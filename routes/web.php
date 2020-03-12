@@ -10,13 +10,20 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('coba', function(){
+    $details['email'] = 'ilhamalfaridzi21@gmail.com';
+    dispatch(new App\Jobs\SendsMail($details));
+    dd('Berhasil');
+});
 
 Route::get('/', 'HomeController@index');
-Route::get('products', 'ProductController@index');
+Route::get('products', 'ProductController@index')->middleware('auth');
 Route::get('about', 'HomeController@about');
 
 Route::get('news', 'NewsController@index')->middleware('auth')->name('news');
 Route::get('users', 'UserController@index');
+
+Route::post('subcribe', 'NewsletterController@store');
 
 // auth route
 Route::get('/login', 'LoginController@getLogin');

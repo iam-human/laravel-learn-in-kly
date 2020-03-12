@@ -4,13 +4,28 @@
 
 @section('body')
 
-    @foreach ($users as $u)
-    <hr>
-        <p>Nama : {{ $u->name }}</p>
-        <p>Email : {{$u->email }}</p>
-        <p>Nomer : {{$u->phone['user_id'] }}</p>
-        <p>Merk Hp : {{ $u->smartphone }}</p>
-    @endforeach
+<section class="probootstrap-section proboostrap-clients probootstrap-bg-white probootstrap-border-top">
+<div class="container">
+<div class="row">
+<div class="col-md-12 section-heading probootstrap-animate">
+<h2>Our Users</h2>
+@foreach ($users as $u)
+<p>
+    {{
+        $loop->iteration .'. Nama : '. $u->name .' - '. $u->email .' - '        
+    }}
+    @if (isset($u->phone['phone']))
+        {{$u->phone['phone']}}
+    @else
+        <span class="text-danger">Have'nt Number Phone</span>
+    @endif
+</p>
+@endforeach
+</div>
+</div>
+</div>
+</section>
+    
     
 @endsection
 

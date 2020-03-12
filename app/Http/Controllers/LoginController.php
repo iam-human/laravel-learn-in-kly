@@ -32,7 +32,7 @@ class LoginController extends Controller
 
     
     public function getLogin() {
-        return view('blog.index', ['login' => 'Silahkan Login terlebih dahulu untuk dapat mengakses portal Berita']);
+        return view('blog.index', ['login' => 'Please login for access some menu']);
     }
 
     public function postLogin(Request $request){

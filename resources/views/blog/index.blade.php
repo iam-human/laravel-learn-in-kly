@@ -135,57 +135,39 @@
     </div>
     </div>
     </section>
-    <section class="probootstrap-section pb0">
+    <section class="probootstrap-section">
     <div class="container">
-    <div class="row probootstrap-feature-showcase probootstrap-animate">
-    <div class="col-md-4 probootstrap-showcase-nav">
-    <ul>
-    <li class="active">
-    <a href="#">Responsive Design</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    <li>
-    <a href="#">Business Solution</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    <li>
-    <a href="#">Brand Identity</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    <li>
-    <a href="#">Creative Ideas</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    <li>
-    <a href="#">Search Engine Friendly</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    <li>
-    <a href="#">Easy Customization</a>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta at.</p>
-    </li>
-    </ul>
-    </div>
-    <div class="col-md-8 probootstrap-animate" style="position: relative;">
-    <div class="probootstrap-home-showcase-wrap">
-    <div class="probootstrap-home-showcase-inner">
-    <div class="probootstrap-chrome">
-    <div><span></span><span></span><span></span></div>
-    </div>
-    <div class="probootstrap-image-showcase">
-    <ul class="probootstrap-images-list">
-    <li class="active"><img src="img/img_showcase_2.jpg" alt="Image" class="img-responsive"></li>
-    <li><img src="img/img_showcase_1.jpg" alt="Image" class="img-responsive"></li>
-    <li><img src="img/img_showcase_2.jpg" alt="Image" class="img-responsive"></li>
-    <li><img src="img/img_showcase_1.jpg" alt="Image" class="img-responsive"></li>
-    <li><img src="img/img_showcase_2.jpg" alt="Image" class="img-responsive"></li>
-    <li><img src="img/img_showcase_1.jpg" alt="Image" class="img-responsive"></li>
-    </ul>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+        <div class="row col-md-6 col-md-offset-3 text-center section-heading probootstrap-animate">
+            <h2>Subcribe</h2>
+            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Iusto provident qui tempore natus quos quibusdam soluta.</p>
+        </div>
+        <div class="row col-md-6 col-md-offset-3 text-center">
+
+            @if (\Session::has('success'))
+            <div class="alert alert-success">
+                <p>{{ \Session::get('success') }}</p>
+            </div><br />
+            @endif
+            @if (\Session::has('failure'))
+            <div class="alert alert-danger">
+                <p>{{ \Session::get('failure') }}</p>
+            </div><br />
+            @endif
+            @if (\Session::has('errors'))
+            <div class="alert alert-danger">
+                <p>{{ $errors->first('email') }}</p>
+            </div><br />
+            @endif
+            
+            <form action="{{url('subcribe')}}" method="post" class="probootstrap-form">
+                @csrf
+                @method('POST')
+                <div class="form-group">
+                    <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : ''}}" placeholder="Youre Email" name="email" value="{{ old('email') }}" required autofocus="true">
+                </div>
+                <button type="submit" class="btn btn-primary">Subcribe</button>
+            </form>
+        </div>
     </div>
     </section>
     <section class="probootstrap-section probootstrap-bg-white probootstrap-zindex-above-showcase">
